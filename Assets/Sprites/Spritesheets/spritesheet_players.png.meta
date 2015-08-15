@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 11e890e8cf414984fba9b24950a485d5
-timeCreated: 1439656323
+timeCreated: 1439657816
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -621,8 +621,8 @@ TextureImporter:
         y: 256
         width: 128
         height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .5, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: alienYellow_swim2.png
       rect:
@@ -631,8 +631,8 @@ TextureImporter:
         y: 512
         width: 128
         height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .5, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: alienYellow_walk1.png
       rect:
