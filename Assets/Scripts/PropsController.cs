@@ -16,7 +16,8 @@ public class PropsController : MonoBehaviour
 	public float maxSpacing;
 
 	private List<GameObject> instances;
-	
+
+
 	void Start() {
 		instances = new List<GameObject>();
 

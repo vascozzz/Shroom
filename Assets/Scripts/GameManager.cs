@@ -57,8 +57,8 @@ public class GameManager : MonoBehaviour
 	public void GameOver() {
 		switchState(GameState.GameOver);
 
-		UIGameOverScore.text = score.ToString();
-		UIGameOverHighscore.text = highscore.ToString();
+		UIGameOverScore.text = "Score: " + score.ToString();
+		UIGameOverHighscore.text = "Best: " + highscore.ToString();
 
 		gameOverTime = Time.time;
 	}
@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
 			Application.LoadLevel(0);
 		}
 	}
+
 
 	private void switchState(GameState newState) {
 		gameState = newState;
@@ -104,6 +105,7 @@ public class GameManager : MonoBehaviour
 				break;
 		}
 	}
+
 
 	void OnDestroy() {
 		if (score > highscore) {

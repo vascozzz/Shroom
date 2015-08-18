@@ -111,6 +111,7 @@ public class PlayerController : MonoBehaviour
 		GameManager.instance.GameOver();
 	}
 
+
 	void OnTriggerEnter2D(Collider2D other) {
 		// if touching objects with the "Score" tag, update score
 		if (other.gameObject.tag == "Score") {

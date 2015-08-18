@@ -13,12 +13,14 @@ public class ObstaclesController : MonoBehaviour
 	public float minSpawnInterval = 1f; // expressed in seconds
 	public float maxSpawnInterval = 2f;
 	public float obstaclesHeightVariance = 0.4f;
-	
+
+
 	void Start() {
 		// invoke the spawn function, which will then invoke itself continuously overtime
 		Invoke("SpawnObstacle", 0f);
 	}
-	
+
+
 	void SpawnObstacle() {
 		if (GameManager.instance.gameState == GameState.Playing) {
 			GameObject obstacle = obstacles[Random.Range(0, obstacles.Length)];
