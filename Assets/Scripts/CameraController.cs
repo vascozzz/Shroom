@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/** 
+ * Camera Controller
+ * Responsible for moving the camera on a target (x-axis only).
+ * Used to follow the player.
+ */
 public class CameraController : MonoBehaviour 
 {
 	public Transform target;
-	private float offset;
+	private float offset; // distance relative to target at all times
 
 
 	void Start() {

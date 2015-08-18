@@ -2,17 +2,33 @@
 using UnityEngine.UI;
 using System.Collections;
 
+/**
+ * Game Manager
+ * Responsible for controlling game state and events (including scoring system, UI). 
+ * Maintains a static instance available to all other scripts.
+ */
 public class GameManager : MonoBehaviour 
 {
 	public static GameManager instance = null;
 
+	// game state
 	public GameState gameState;
 	public float respawnDelay = 1f;
 
-	public GameObject UIIntro;
-	public GameObject UIInGame;
-	public Text UIScore;
+	private float gameOverTime = 0;
 
+	// ui
+	public CanvasScaler UICanvas;
+	public GameObject UIIntro;
+	public GameObject UIPlaying;
+	public GameObject UIGameOver;
+
+	// score
+	public Text UIPlayingScore;
+	public Text UIGameOverScore;
+	public Text UIGameOverHighscore;
+
+	// scoring system
 	private int score = 0;
 	private int highscore;
 
@@ -29,36 +45,69 @@ public class GameManager : MonoBehaviour
 
 	void Start() {
 		highscore = PlayerPrefs.GetInt("highscore", 0);
+		switchState(GameState.Intro);
 	}
 
 
 	public void GameStart() {
-		UIIntro.SetActive(false);
-		UIInGame.SetActive(true);
-		gameState = GameState.Playing;
+		switchState(GameState.Playing);
 	}
 
 
 	public void GameOver() {
-		gameState = GameState.GameOver;
-		Invoke("ReloadScene", respawnDelay);
+		switchState(GameState.GameOver);
+
+		UIGameOverScore.text = score.ToString();
+		UIGameOverHighscore.text = highscore.ToString();
+
+		gameOverTime = Time.time;
 	}
 
 
 	public void UpdateScore() {
 		score++;
-		UIScore.text = score.ToString();
+		UIPlayingScore.text = score.ToString();
 	}
 
 
-	void ReloadScene() {
-		Application.LoadLevel(0);
+	public void ResetGame() {
+		// player will only be allowed to respawn after a certain delay
+		if (Time.time > gameOverTime + respawnDelay) {
+			Application.LoadLevel(0);
+		}
 	}
 
+	private void switchState(GameState newState) {
+		gameState = newState;
+
+		switch (gameState) {
+			case GameState.Intro:
+				UIIntro.SetActive(true);
+				UIPlaying.SetActive(false);
+				UIGameOver.SetActive(false);
+				break;
+
+			case GameState.Playing:
+				UIIntro.SetActive(false);
+				UIGameOver.SetActive(false);
+				UICanvas.matchWidthOrHeight = 0.5f;
+				UIPlaying.SetActive(true);
+				break;
+
+			case GameState.GameOver:
+				UIIntro.SetActive(false);
+				UIPlaying.SetActive(false);
+				UIGameOver.SetActive(true);
+				break;
+
+			default: 
+				break;
+		}
+	}
 
 	void OnDestroy() {
 		if (score > highscore) {
-			PlayerPrefs.SetInt("highscore", highscore);
+			PlayerPrefs.SetInt("highscore", score);
 		}
 	}
 }

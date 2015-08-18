@@ -1,22 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpawnerController : MonoBehaviour 
+/**
+ * Spawner Controller
+ * Responsible for spawning random obstacles for the player.
+ */
+public class ObstaclesController : MonoBehaviour 
 {
 	public GameObject[] obstacles;
-	public float minSpawnInterval = 1f;
+	public GameObject container;
+
+	public float minSpawnInterval = 1f; // expressed in seconds
 	public float maxSpawnInterval = 2f;
 	public float obstaclesHeightVariance = 0.4f;
-
-	private GameObject worldMap;
-
 	
 	void Start() {
-		worldMap = GameObject.FindGameObjectWithTag("Map");
-
+		// invoke the spawn function, which will then invoke itself continuously overtime
 		Invoke("SpawnObstacle", 0f);
 	}
-
 	
 	void SpawnObstacle() {
 		if (GameManager.instance.gameState == GameState.Playing) {
@@ -26,7 +27,7 @@ public class SpawnerController : MonoBehaviour
 			Vector3 pos = new Vector3(this.transform.position.x, height, 0f);
 			
 			GameObject obstacleObj = Instantiate(obstacle, pos, Quaternion.identity) as GameObject;
-			obstacleObj.transform.parent = worldMap.transform;
+			obstacleObj.transform.parent = container.transform;
 		}
 
 		float nextSpawn = Random.Range(minSpawnInterval, maxSpawnInterval);

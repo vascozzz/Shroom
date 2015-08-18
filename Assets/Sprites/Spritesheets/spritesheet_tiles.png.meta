@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b89c075e77789934d99702ba770e4937
-timeCreated: 1439656331
+timeCreated: 1439835244
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -596,7 +596,7 @@ TextureImporter:
         serializedVersion: 2
         x: 256
         y: 1408
-        width: 128
+        width: 117
         height: 128
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -604,8 +604,8 @@ TextureImporter:
     - name: signExit.png
       rect:
         serializedVersion: 2
-        x: 512
-        y: 1024
+        x: 513
+        y: 1023
         width: 128
         height: 128
       alignment: 0

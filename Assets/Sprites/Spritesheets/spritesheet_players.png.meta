@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 11e890e8cf414984fba9b24950a485d5
-timeCreated: 1439657816
+timeCreated: 1439752693
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -551,8 +551,8 @@ TextureImporter:
         y: 512
         width: 128
         height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .5, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: alienYellow_climb2.png
       rect:
@@ -561,8 +561,8 @@ TextureImporter:
         y: 768
         width: 128
         height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .5, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: alienYellow_duck.png
       rect:
@@ -571,8 +571,8 @@ TextureImporter:
         y: 1024
         width: 128
         height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .5, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: alienYellow_front.png
       rect:
@@ -581,8 +581,8 @@ TextureImporter:
         y: 1280
         width: 128
         height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .5, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: alienYellow_hit.png
       rect:
@@ -591,8 +591,8 @@ TextureImporter:
         y: 1536
         width: 128
         height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .5, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: alienYellow_jump.png
       rect:
@@ -601,8 +601,8 @@ TextureImporter:
         y: 1792
         width: 128
         height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .5, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: alienYellow_stand.png
       rect:
@@ -611,8 +611,8 @@ TextureImporter:
         y: 0
         width: 128
         height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .5, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: alienYellow_swim1.png
       rect:
@@ -628,7 +628,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 512
+        y: 509
         width: 128
         height: 256
       alignment: 9
@@ -641,8 +641,8 @@ TextureImporter:
         y: 768
         width: 128
         height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .5, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: alienYellow_walk2.png
       rect:
@@ -651,8 +651,8 @@ TextureImporter:
         y: 1024
         width: 128
         height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .5, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
