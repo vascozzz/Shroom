@@ -12,24 +12,23 @@ public class GameManager : MonoBehaviour
 	public static GameManager instance = null;
 
 	// game state
-	public GameState gameState;
+	[HideInInspector] public GameState gameState;
 	public float respawnDelay = 1f;
-
 	private float gameOverTime = 0;
 
-	// ui
+	// ui state
 	public CanvasScaler UICanvas;
 	public GameObject UIIntro;
 	public GameObject UIPlaying;
 	public GameObject UIGameOver;
 
-	// score
+	// ui score
 	public Text UIPlayingScore;
 	public Text UIGameOverScore;
 	public Text UIGameOverHighscore;
 
 	// scoring system
-	private int score = 0;
+	[HideInInspector] public int score = 0;
 	private int highscore;
 
 

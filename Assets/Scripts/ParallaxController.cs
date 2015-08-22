@@ -7,6 +7,7 @@ using System.Collections.Generic;
  * Responsible for moving a background/foreground element, generating a parallax effect.
  * Works by texture offseting.
  */
+[RequireComponent(typeof(Renderer))]
 public class ParallaxController : MonoBehaviour 
 {
 	[Range(0f, 1f)] public float speed = 0.5f;

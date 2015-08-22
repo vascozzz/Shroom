@@ -5,6 +5,11 @@ using System.Collections;
  * Player Controller
  * Responsible for moving the player character. All keyboard/mouse inputs are handled here.
  */
+[RequireComponent(typeof (Animator))]
+[RequireComponent(typeof (AudioSource))]
+[RequireComponent(typeof (CircleCollider2D))]
+[RequireComponent(typeof (Rigidbody2D))]
+[RequireComponent(typeof (SpriteRenderer))]
 public class PlayerController : MonoBehaviour 
 {
 	[Range(0f, 10f)] public float horizontalSpeed;
@@ -95,7 +100,6 @@ public class PlayerController : MonoBehaviour
 
 
 	void OnCollisionEnter2D(Collision2D collision) {
-		// since this is a simple game, all collisions will mean game over
 		actionPressed = false;
 		animController.SetTrigger("Death");
 
@@ -105,15 +109,14 @@ public class PlayerController : MonoBehaviour
 		if (!dead) {
 			movementAudio.clip = deathSound;
 			movementAudio.Play();
+
+			GameManager.instance.GameOver();
 			dead = true;
 		}
-
-		GameManager.instance.GameOver();
 	}
 
 
 	void OnTriggerEnter2D(Collider2D other) {
-		// if touching objects with the "Score" tag, update score
 		if (other.gameObject.tag == "Score") {
 			GameManager.instance.UpdateScore();
 

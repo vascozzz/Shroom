@@ -6,6 +6,7 @@ using System.Collections;
  * Responsible for destroying all objects in a given layer on touch.
  * Used for destroying obstacles left behind the player.
  */
+[RequireComponent(typeof (BoxCollider2D))]
 public class BoundaryController : MonoBehaviour 
 {	
 	public int boundedLayer = 0;
