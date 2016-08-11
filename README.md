@@ -10,8 +10,6 @@ It plays like Flappy Bird, with moving platforms spawning after a set number of 
 
 ## Screenshots
 
-![screenshot](Docs/screen1.jpg)
+![screenshot](Docs/screen1.png) ![screenshot](Docs/screen2.png)
 
-![screenshot](Docs/screen2.jpg)
-
-![screenshot](Docs/screen3.jpg)
+Larger resolutions (tablet or desktop) are also supported.
